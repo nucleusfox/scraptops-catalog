@@ -1,0 +1,20 @@
+{
+  "short_name": "Scraptops Catalog",
+  "name": "Scraptops Shop Catalog",
+  "icons": [
+    {
+      "src": "apple-icon-180x180-1.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "peachtree-logo.png",
+      "type": "image/png",
+      "sizes": "136x150"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
