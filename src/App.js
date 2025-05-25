@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import { Catalog } from './Catalog';
+import { Main } from './Main';
 
 function App() {
 
 return(
-  <Catalog/>
+  <Main/>
 )
 
 }
