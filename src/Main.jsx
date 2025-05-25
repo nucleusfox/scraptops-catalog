@@ -2,6 +2,7 @@ import { logDOM } from '@testing-library/react';
 import './App.css';
 import axios from 'axios';
 import { useState, useEffect, useMemo } from 'react'
+import { useLocation } from 'react-router-dom';
 
 import product_details_json from "./product_details.json";
 console.log('Loaded product_details:', product_details_json);
@@ -15,11 +16,32 @@ const productCategories = ["All", ...Array.from(
   )
 )];
 
+const toCamelCase = (word) => {
+  if (word.length == 0) {
+    return word;
+  }
+  if (word.charAt(0) == '#') {
+    word = word.slice(1).toLowerCase();
+  }
+
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
 
 export function Main() {
+  // Parse URL
+  const location = useLocation();
+  const searchQuery  = location.search;
+  console.log('location:', location);
+  console.log('searchQuery:', searchQuery);
+
+
   // Main menu
   const MenuItems = ["Home", "Catalog", "About", "Contacts"];
-  const [selectedMenuItem, setSelectedMenuItem] = useState(MenuItems[0]);
+  // if location.hash && location.hash.charAt(0) == '#'
+  const urlMenuItem = toCamelCase(location.hash) || MenuItems[0];
+  console.log('Identified hash menu item:', urlMenuItem);
+  
+  const [selectedMenuItem, setSelectedMenuItem] = useState(toCamelCase(location.hash) || MenuItems[0]);
   
   // Product Categories
   const [selectedCategory, setSelectedCategory] = useState(productCategories[0]);
@@ -79,6 +101,8 @@ export function Main() {
 
   // Home
   const renderTabHome = () => {
+    window.location.replace('#home');
+
     return (
       <div className="container">
         <h2>Purum-purum</h2>
@@ -89,6 +113,8 @@ export function Main() {
 
   // Catalog
   const renderTabCatalog = () => {
+    window.location.replace('#catalog');
+
     return (
       <div className="container">
         <div className="d-flex justify-content-center">
@@ -183,6 +209,8 @@ export function Main() {
 
   // About
   const renderTabAbout = () => {
+    window.location.replace('#about');
+
     return (
       <div className="container">
         <h2>About</h2>
@@ -193,6 +221,8 @@ export function Main() {
 
   // Contacts
   const renderTabContacts = () => {
+    window.location.replace('#contacts');
+
     return (
       <div className="container">
         <h2>Contacts</h2>
