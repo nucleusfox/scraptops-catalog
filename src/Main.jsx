@@ -36,7 +36,7 @@ export function Main() {
 
 
   // Main menu
-  const MenuItems = ["Home", "Catalog", "About", "Contacts"];
+  const MenuItems = ["Home", "Products", "About", "Contacts"];
   // if location.hash && location.hash.charAt(0) == '#'
   const urlMenuItem = toCamelCase(location.hash) || MenuItems[0];
   console.log('Identified hash menu item:', urlMenuItem);
@@ -105,15 +105,17 @@ export function Main() {
 
     return (
       <div className="container">
-        <h2>Purum-purum</h2>
-        <p>Pum-pum</p>
+        <h2>Welcome to scraptops.com...</h2>
+        <p>Thank you for visiting our site.  We specialize in providing a one-stop shop for laptop parts and accessories.</p>
+        <p>Our inventory can be viewed and purchased through our <a href="https://www.ebay.com/str/scraptops404?_trksid=p4429486.m3561.l161211" target="_blank" rel="noopener noreferrer">eBay store</a>, or we can provide you with information on laptop parts and accessories via email.</p>
+        <p>You can reach us at info@scraptops.com.  We would be pleased to hear from you!  Please let us know what your needs and questions are, and we will be more than happy to help.</p>
       </div>
     );
   }
 
   // Catalog
-  const renderTabCatalog = () => {
-    window.location.replace('#catalog');
+  const renderTabProducts = () => {
+    window.location.replace('#products');
 
     return (
       <div className="container">
@@ -214,7 +216,7 @@ export function Main() {
     return (
       <div className="container">
         <h2>About</h2>
-        <p>Cool stuff ya know</p>
+        <p>We sell laptop parts for all major brands and models.  We specialize in having a large selection.  As always, some parts are in higher demand, while some older parts are more abundant.  Feel free to contact us in search of any parts or laptop accessories, or to request a price.</p>
       </div>
     );
   };
@@ -332,7 +334,7 @@ export function Main() {
             </div>
             <div className="col-md-10">
               {selectedMenuItem === 'Home' && renderTabHome()}
-              {selectedMenuItem === 'Catalog' && renderTabCatalog()}
+              {selectedMenuItem === 'Products' && renderTabProducts()}
               {selectedMenuItem === 'About' && renderTabAbout()}
               {selectedMenuItem === 'Contacts' && renderTabContacts()}
             </div>
