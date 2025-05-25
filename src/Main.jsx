@@ -233,7 +233,7 @@ export function Main() {
   
   return (
     <div className='App-header'>
-      <div className="container" style={{ paddingTop: '2rem', maxWidth: '95%' }}>
+      <div className="container pt-5 pb-5" style={{ maxWidth: '95%' }}>
         <div className="" style={{ backgroundColor: '#f8f9fa', boxShadow: '0px 0px 20px 2px rgba(20, 80, 100, 0.2)', padding: '2rem', borderRadius: '10px'  }}>
           
           <div className="d-flex justify-content-center align-items-center flex-column">              
